@@ -56,3 +56,8 @@ systemctl start nginx
 systemctl start v2ray
 
 
+# set firewall
+firewall-cmd --zone=public --permanent --add-service=http
+firewall-cmd --zone=public --permanent --add-service=https
+firewall-cmd --reload
+
