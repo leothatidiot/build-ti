@@ -58,7 +58,7 @@ bash assets/install-bbr.sh
 
 Windows 平台推荐使用 V2rayN，配置如下：
 
-<img src="http://gfw-breaker.win/videos/imgs/easy-v2ray/v2rayN.png" width="600px"/>
+<img src="https://raw.githubusercontent.com/gfw-breaker/ssr-accounts/master/resources/free01-0514.png" width="600px"/>
 
 iPhone 推荐使用 shadowrocket,配置如下：
 
