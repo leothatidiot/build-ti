@@ -2,11 +2,6 @@
 # author: gfw-breaker
 
 # detect CentOS 7
-if [ $version -eq 7 ]; then
-	yum install -y epel-release elrepo-release
-	yum --enablerepo=elrepo-kernel -y install kernel-ml
-fi
-
 if [ $version -ne 7 ]; then
   echo 'not CentOS 7'
   exit 0
