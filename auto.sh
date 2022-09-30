@@ -1,20 +1,32 @@
 #!/bin/bash
 # author: gfw-breaker
 
-path=/ray
-uuid=3579436c-b37e-11eb-8529-0242ac130003
+# detect CentOS 7
+if [ $version -eq 7 ]; then
+	yum install -y epel-release elrepo-release
+	yum --enablerepo=elrepo-kernel -y install kernel-ml
+fi
 
-yum install -y git
-git clone https://github.com/gfw-breaker/easy-v2ray.git
+if [ $version -ne 7 ]; then
+  echo 'not CentOS 7'
+  exit 0
+fi
 
-# install 
-cd easy-v2ray
-cat > params.txt <<EOF
-path=$path
-uuid=$uuid
-EOF
+# disable SELinux
+setenforce 0
+sed -i  "s/enforcing/disabled/g" /etc/selinux/config
 
-bash assets/install-v2ray.sh
-bash assets/install-bbr.sh
+# disable firewalld
+systemctl stop firewalld && systemctl disable firewalld
 
+### 
+# path=/grtdnlPa
+# uuid=c3590324-c5be-11ea-87d0-0242ac130003
+# cat > params.txt <<EOF
+# path=$path
+# uuid=$uuid
+# EOF
 
+# deploy
+bash assets2/setup.sh
+bash assets2/install-bbr.sh
