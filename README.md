@@ -3,7 +3,7 @@
 ```
 git clone https://github.com/leothatidiot/build-ti.git
 
-cd build-ti
+cd ./build-ti/simple-deploy
 
 ./auto.sh
 ```
